@@ -43,16 +43,21 @@ class TestDemoTest {
 		return Stream.of(
 				
 				arguments(2, 4, 6, false),
-				arguments(-1, 5, 0, true),
+				arguments(-1, 5, 4, true),
 				arguments(0, 3, 0, true),
-				arguments(8, 12, 20, false)
+				arguments(8, 12, 20, false),
+				arguments(-2, 12, 10, true),
+				arguments(5, 7, 12, false),
+				arguments(-1, 8, 9, true),
+				arguments(0, 8, 8, true)
+				
 				
 		        );
 	}
 	@Test
     void assertThatNumberSquaredIsCorrect() {
         TestDemo mockDemo = spy(testDemo);
-        doReturn(5).when(mockDemo).getRandomInt();
+        doReturn(4).when(mockDemo).getRandomInt();
 
         int fiveSquared = mockDemo.randomNumberSquared();
 
